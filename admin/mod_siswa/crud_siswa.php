@@ -403,6 +403,7 @@
             'nis' => $_POST['nis'],
             'nama_siswa' => ucwords(strtolower($nama)),
             'kelas' => $_POST['kelas'],
+            'jk' => $_POST['jk'],
             'jurusan' => $_POST['jurusan'],
             'password' => $_POST['password'],
             'status' => '1',

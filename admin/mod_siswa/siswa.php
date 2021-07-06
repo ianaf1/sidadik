@@ -33,7 +33,17 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                         <label>Nama Siswa</label>
                         <input type="text" name="nama" class="form-control" >
                     </div>
-
+                    <div class="form-group">
+                        <div class="text-info"><strong>Jenis Kelamin</strong></div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="jk" class="custom-control-input" value="L" <?php if ($siswa['jk'] == 'L') echo 'checked' ?>>
+                            <label class="custom-control-label" for="customRadioInline1">Laki-laki</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" name="jk" class="custom-control-input" value="P" <?php if ($siswa['jk'] == 'P') echo 'checked' ?>>
+                            <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
+                        </div>
+                    </div>
                     <!-- <div class="form-group">
                         <label for="kelas">Kelas</label>
                         <select class="form-control" style="width: 100%" name="kelas" id="kelas" >
