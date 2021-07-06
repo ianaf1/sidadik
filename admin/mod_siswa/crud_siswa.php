@@ -190,6 +190,30 @@
         update($koneksi, 'siswa', $data, $where);
     }
 
+    if ($pg == 'simpankelas') {
+        $kelas = (isset($_POST['kelas']));
+        $data = [
+            'kelas'            => $_POST['kelas'],
+        ];
+    
+        $where = [
+            'id_siswa' => $_POST['id_siswa']
+        ];
+    
+        $exec = update($koneksi, 'siswa', $data, $where);
+        if ($exec) {
+            $pesan = [
+                'pesan' => 'ok'
+            ];
+            echo 'ok';
+        } else {
+            $pesan = [
+                'pesan' => mysqli_error($koneksi)
+            ];
+            echo mysqli_error($koneksi);
+        }
+    }
+
     if ($pg == 'import') {
         if (isset($_FILES['file']['name'])) {
             $file = $_FILES['file']['name'];
@@ -376,7 +400,7 @@
         $nama = str_replace("'", "`", $_POST['nama']);
         $data = [
 
-            'nisn' => $_POST['nisn'],
+            'nis' => $_POST['nis'],
             'nama_siswa' => ucwords(strtolower($nama)),
             'kelas' => $_POST['kelas'],
             'jurusan' => $_POST['jurusan'],

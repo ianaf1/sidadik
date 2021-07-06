@@ -1,4 +1,18 @@
 <?php defined('BASEPATH') or die("ip anda sudah tercatat oleh sistem kami") ?>
+
+<?php
+$sql = mysqli_query($koneksi, "select max(nis) as maxID from siswa");
+$data = mysqli_fetch_array($sql);
+
+$kode = $data['maxID'];
+
+$nourut = (int) substr($kode, 14, 4);
+$nourut++;
+$ket = "131236010019";
+$th = "21";
+$nisbaru = $ket . $th . sprintf("%04s", $nourut);
+?>
+
 <!-- Modal -->
 <div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -12,17 +26,17 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>NISN</label>
-                        <input type="text" name="nisn" class="form-control nisn" required="">
+                        <label>NIS</label>
+                        <input type="text" name="nis" class="form-control nis" readonly value="<?php echo $nisbaru ?>" >
                     </div>
                     <div class="form-group">
                         <label>Nama Siswa</label>
-                        <input type="text" name="nama" class="form-control" required="">
+                        <input type="text" name="nama" class="form-control" >
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="kelas">Kelas</label>
-                        <select class="form-control" style="width: 100%" name="kelas" id="kelas" required>
+                        <select class="form-control" style="width: 100%" name="kelas" id="kelas" >
                             <option value="">Pilih kelas</option>
                             <?php
                             $query = mysqli_query($koneksi, "select * from kelas where status='1'");
@@ -30,9 +44,8 @@
                             ?>
                                 <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
                             <?php } ?>
-
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="jurusan">Pilihan Jurusan</label>
                         <select class="form-control" name="jurusan" id="jurusan" required>
@@ -48,12 +61,12 @@
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="text" name="password" class="form-control password" required="">
+                        <input type="text" name="password" class="form-control password" required>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </form>
@@ -112,13 +125,11 @@
         </div>
     </div>
 </div>
-
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h4>Data Siswa</h4>
-
                 <div class="card-header-action">
                     <a class="btn btn-info" href="mod_siswa/export_excel.php" role="button"> Export Data</a>
                     <button type="button" class="btn btn-icon icon-left btn-warning" data-toggle="modal" data-target="#tambahdata">
@@ -130,9 +141,7 @@
                     <button type="button" class="btn btn-icon icon-left btn-danger" data-toggle="modal" data-target="#hapusdata">
                         <i class="fa fa-trash"></i> Hapus Data
                     </button>
-
                 </div>
-
             </div>
 
             <div class="card-body">
@@ -143,11 +152,11 @@
                                 <th class="text-center">
                                     No
                                 </th>
-                                <th>NISN</th>
-                                <th>Password</th>
                                 <th>Nama Siswa</th>
+                                <th>NIS</th>
+                                <th>Password</th>
                                 <th>L/P</th>
-                                <th>TTL</th>
+                                <!-- <th>TTL</th> -->
                                 <th>Kelas</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -162,11 +171,11 @@
                             ?>
                                 <tr>
                                     <td><?= $no; ?></td>
-                                    <td><?= $siswa['nisn'] ?></td>
-                                    <td><?= $siswa['password'] ?></td>
                                     <td><?= $siswa['nama_siswa'] ?></td>
+                                    <td><?= $siswa['nis'] ?></td>
+                                    <td><?= $siswa['password'] ?></td>
                                     <td><?= $siswa['jk'] ?></td>
-                                    <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
+                                    <!-- <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td> -->
                                     <td><?= $siswa['kelas'] ?></td>
 
                                     <td>
@@ -184,6 +193,38 @@
                                         <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
                                             <i class="fas fa-user    "></i>
                                         </button>
+                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-editkelas<?= $no ?>">
+                                            <i class="fas fa-edit    "></i>
+                                        </button>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="modal-editkelas<?= $no ?>" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <form id="form-editkelas<?= $no ?>">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Edit Kelas</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
+                                                            <div class="form-group">
+                                                                <div class="control-label">Edit Kelas<?= $no ?></div>
+                                                                <select class="form-control" style="width: 100%" name="kelas" id="kelas" >
+                                                                    <option value="">Pilih kelas</option>
+                                                                    
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button>
                                         <!-- Modal -->
                                         <div class="modal fade" id="modal-edit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -197,9 +238,7 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-
-                                                            <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
-
+                                                            <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" >
                                                             <div class="form-group">
                                                                 <div class="control-label">Pilih Status</div>
                                                                 <div class="custom-switches-stacked mt-2">
@@ -230,8 +269,34 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        
                                     </td>
                                 </tr>
+                                <script>
+                                    $('#form-editkelas<?= $no ?>').submit(function(e) {
+                                        e.preventDefault();
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: 'mod_daftar/crud_siswa.php?pg=simpankelas',
+                                            data: $(this).serialize(),
+                                            success: function(data) {
+                                    
+                                                iziToast.success({
+                                                    title: 'OKee!',
+                                                    message: 'Status Berhasil diubah',
+                                                    position: 'topRight'
+                                                });
+                                                setTimeout(function() {
+                                                    window.location.reload();
+                                                }, 2000);
+                                                $('#modal-editkelas<?= $no ?>').modal('hide');
+                                                //$('#bodyreset').load(location.href + ' #bodyreset');
+                                            }
+                                        });
+                                        return false;
+                                    });
+                                </script>
                                 <script>
                                     $('#form-edit<?= $no ?>').submit(function(e) {
                                         e.preventDefault();
@@ -240,7 +305,6 @@
                                             url: 'mod_siswa/crud_siswa.php?pg=status',
                                             data: $(this).serialize(),
                                             success: function(data) {
-
                                                 iziToast.success({
                                                     title: 'OKee!',
                                                     message: 'Status Berhasil diubah',
@@ -258,8 +322,6 @@
                                 </script>
                             <?php }
                             ?>
-
-
                         </tbody>
                     </table>
                 </div>
@@ -304,9 +366,9 @@
 </script>
 
 <script>
-    var cleaveI = new Cleave('.nisn', {
+    var cleaveI = new Cleave('.nis', {
 
-        blocks: [10]
+        blocks: [18]
 
     });
 

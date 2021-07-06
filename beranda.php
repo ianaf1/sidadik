@@ -77,7 +77,7 @@
                                 <a class="nav-link" href="#home" id="link-home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./admin" id="link-jadwal">Admin</a>
+                                <a class="nav-link" href="./admin" id="link-jadwal" >Admin</a>
                             </li>
 
                         </ul>
@@ -174,7 +174,6 @@
                     <div class="col-sm-4">
 
                         <div class="card card-login">
-
                             <div class="card-body">
                                 <img src="<?= $setting['logo_sidadik'] ?>" alt="" width="100%">
                                 <br>
@@ -194,13 +193,11 @@
                                     <button type="submit" class="btn btn-primary btn-block btn-login" id="btnsimpan">
                                         Masuk
                                     </button>
-
-
                                 </form>
                                 <br>
-
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -253,7 +250,7 @@
                                         <form id="form-login">
                                             <div class="form-group">
                                                 <span class="fa fa-user"></span>
-                                                <input type="text" onkeyup="this.value = this.value.toUpperCase()" class="form-control" name="username" placeholder="Masukkan NISN" required autocomplete="off" disabled>
+                                                <input type="text" onkeyup="this.value = this.value.toUpperCase()" class="form-control" name="username" placeholder="Masukkan NIS" required autocomplete="off" disabled>
                                             </div>
                                             <div class="form-group">
                                                 <span class="fa fa-key"></span>
@@ -508,7 +505,7 @@
                         position: 'topRight'
                     });
                     setTimeout(function() {
-                        $('#home').load('konfirmasi.php?id=' + json.id + '&nisn=' + json.nisn + '&pass=' + json.pass + '&nama=' + json.nama);
+                        $('#home').load('konfirmasi.php?id=' + json.id + '&nis=' + json.nis + '&pass=' + json.pass + '&nama=' + json.nama);
                     }, 2000);
 
                 } else {
@@ -578,7 +575,7 @@
                         position: 'topRight'
                     });
                     setTimeout(function() {
-                        $('#home').load('konfirmasi.php?id=' + json.id + '&nisn=' + json.nisn + '&pass=' + json.pass + '&nama=' + json.nama);
+                        $('#home').load('konfirmasi.php?id=' + json.id + '&nis=' + json.nis + '&pass=' + json.pass + '&nama=' + json.nama);
                     }, 2000);
 
                 } else {

@@ -41,7 +41,7 @@
 								</div>
 							</div>
 						</div>
-						<!--<div class='form-group'>
+						<!-- <div class='form-group'>
 							<div class='row'>
 								<div class='col-md-12'>
 									<label>Kop Sekolah</label>
@@ -64,7 +64,7 @@
 									<img src="../<?= $setting['logo_sidadik'] ?>" class="img-thumbnail" width="800">
 								</div>
 							</div>
-						</div>-->
+						</div> -->
 
 					</div><!-- /.box-body -->
 				</div><!-- /.box -->

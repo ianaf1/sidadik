@@ -216,7 +216,7 @@ if (isset($_SESSION['id_siswa'])) {
                   Copyright &copy; <?= date('Y') ?> SIDADIK <div class="bullet"></div> <?= $setting['nama_sekolah'] ?>
                 </div>
                 <div class="footer-right">
-                  <a href="https://<?= $setting['web'] ?>">Kang Melek</a>
+                  <a href="https://instagram.com/ianfatah1<?= $setting['web'] ?>">Ian Fatah</a>
                 </div>
               </footer>
             </div>

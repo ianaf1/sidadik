@@ -54,7 +54,7 @@
                                             <!-- DATA DIRI -->
                                             <div class="tab-pane fade show active" id="datadiri" role="tabpanel" aria-labelledby="data-diri">
                                                 <form id="form-datadiri">
-                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
+                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" >
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <div class="input-group">
@@ -63,7 +63,7 @@
                                                                         <i class="text-info"><b>Nama Lengkap</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="nama_siswa" value="<?= $siswa['nama_siswa'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="nama_siswa" value="<?= $siswa['nama_siswa'] ?>"  />
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-6">
@@ -73,7 +73,7 @@
                                                                         <i class="text-info"><b>Kewarganegaraan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='warga_siswa' required>
+                                                                <select class='form-control' name='warga_siswa' >
                                                                     <option value=''>Pilih Kewarganegaraan</option>";
                                                                     <?php foreach ($kewarganegaraan as $val) { ?>
                                                                         <?php if ($siswa['warga_siswa'] == $val) { ?>
@@ -93,7 +93,7 @@
                                                                         <i class="text-info"><b>NISN</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="10" minlength="10" type="text" name="nisn" value="<?= $siswa['nisn'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="10" minlength="10" type="text" name="nisn" value="<?= $siswa['nisn'] ?>" />
                                                             </div>
                                                         </div>
 
@@ -104,7 +104,7 @@
                                                                         <i class="text-info"><b>NIS Lokal</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" type="text" name="nis" value="<?= $siswa['nis'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" type="text" name="nis" value="<?= $siswa['nis'] ?>" ="" />
                                                             </div>
                                                         </div>
 
@@ -115,7 +115,7 @@
                                                                         <i class="text-info"><strong>NIK</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik" value="<?= $siswa['nik'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik" value="<?= $siswa['nik'] ?>" ="" />
                                                             </div>
                                                         </div>
 
@@ -126,7 +126,7 @@
                                                                         <i class="text-info"><strong>Tempat Lahir</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="tempat_lahir" value="<?= $siswa['tempat_lahir'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="tempat_lahir" value="<?= $siswa['tempat_lahir'] ?>" ="" />
                                                             </div>
                                                         </div>
 
@@ -137,7 +137,7 @@
                                                                         <i class="text-info"><strong>Tanggal Lahir</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="date" name="tgl_lahir" value="<?= $siswa['tgl_lahir'] ?>" required="required" />
+                                                                <input class="form-control" type="date" name="tgl_lahir" value="<?= $siswa['tgl_lahir'] ?>" ="" />
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-6">
@@ -160,7 +160,7 @@
                                                                         <i class="text-info"><strong>Anak Ke</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="anak_ke" value="<?= $siswa['anak_ke'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="anak_ke" value="<?= $siswa['anak_ke'] ?>" ="" />
                                                             </div>
                                                         </div>
 
@@ -171,7 +171,7 @@
                                                                         <i class="text-info"><strong>Jml Saudara</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="saudara" value="<?= $siswa['saudara'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="saudara" value="<?= $siswa['saudara'] ?>" ="" />
                                                             </div>
                                                         </div>
 
@@ -182,7 +182,7 @@
                                                                         <i class="text-info"><b>Agama</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='agama' required>
+                                                                <select class='form-control' name='agama' >
                                                                     <option value=''>Pilih Agama</option>";
                                                                     <?php foreach ($agama as $val) { ?>
                                                                         <?php if ($siswa['agama'] == $val) { ?>
@@ -202,7 +202,7 @@
                                                                         <i class="text-info"><b>Cita-cita</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='cita' required>
+                                                                <select class='form-control' name='cita' >
                                                                     <option value=''>Pilih Cita-cita</option>";
                                                                     <?php foreach ($cita as $val) { ?>
                                                                         <?php if ($siswa['cita'] == $val) { ?>
@@ -222,7 +222,7 @@
                                                                         <i class="text-info"><b>No Hp</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp" value="<?= $siswa['no_hp'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp" value="<?= $siswa['no_hp'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -244,7 +244,7 @@
                                                                         <i class="text-info"><b>Hobi</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='hobi' required>
+                                                                <select class='form-control' name='hobi' >
                                                                     <option value=''>Pilih hobi</option>";
                                                                     <?php foreach ($hobi as $val) { ?>
                                                                         <?php if ($siswa['hobi'] == $val) { ?>
@@ -258,7 +258,7 @@
                                                         </div><br>
                                                         <div class="form-group col-md-12">
                                                             <div class="text-info"><strong>Status Tempat Tinggal</strong></div>
-                                                            <select class='form-control' name='status_tinggal_siswa' required>
+                                                            <select class='form-control' name='status_tinggal_siswa' >
                                                                 <option value=''>Pilih status tinggal</option>";
                                                                 <?php foreach ($status_tinggal_siswa as $val) { ?>
                                                                     <?php if ($siswa['status_tinggal_siswa'] == $val) { ?>
@@ -278,8 +278,8 @@
                                                                         <i class="text-info"><b>Provinsi</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="prov" value="<?= $siswa['prov'] ?>" required />
-                                                                <!--<select class='form-control' id="form_prov" name='prov' required>
+                                                                <input class="form-control" type="text" name="prov" value="<?= $siswa['prov'] ?>"  />
+                                                                <!--<select class='form-control' id="form_prov" name='prov' >
                                                                         <?php
                                                                         $a = mysqli_query($koneksi, "SELECT * FROM siswa INNER JOIN wilayah ON siswa.prov = wilayah.kode");
                                                                         while ($row = mysqli_fetch_array($a)) {
@@ -307,8 +307,8 @@
                                                                         <i class="text-info"><b>Kabupaten</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="kab" value="<?= $siswa['kab'] ?>" required />
-                                                                <!--<select class='form-control' id="form_kab" name='kab' required>
+                                                                <input class="form-control" type="text" name="kab" value="<?= $siswa['kab'] ?>"  />
+                                                                <!--<select class='form-control' id="form_kab" name='kab' >
                                                                         <option value="<?= $siswa['kab'] ?>"><?= $siswa['kab'] ?></option>
                                                                     </select>-->
                                                             </div>
@@ -320,8 +320,8 @@
                                                                         <i class="text-info"><b>Kecamatan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="kec" value="<?= $siswa['kec'] ?>" required />
-                                                                <!--<select class='form-control' id="form_kec" name='kec' required>
+                                                                <input class="form-control" type="text" name="kec" value="<?= $siswa['kec'] ?>"  />
+                                                                <!--<select class='form-control' id="form_kec" name='kec' >
                                                                         <option value="<?= $siswa['kec'] ?>"><?= $siswa['kec'] ?></option>
                                                                     </select>-->
                                                             </div>
@@ -333,8 +333,8 @@
                                                                         <i class="text-info"><b>Desa</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="desa" value="<?= $siswa['desa'] ?>" required />
-                                                                <!--<select class='form-control' id="form_des" name='desa' required>
+                                                                <input class="form-control" type="text" name="desa" value="<?= $siswa['desa'] ?>"  />
+                                                                <!--<select class='form-control' id="form_des" name='desa' >
                                                                         <option value="<?= $siswa['desa'] ?>"><?= $siswa['desa'] ?></option>
                                                                     </select>-->
                                                             </div>
@@ -346,7 +346,7 @@
                                                                         <i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="alamat_siswa" value="<?= $siswa['alamat_siswa'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="alamat_siswa" value="<?= $siswa['alamat_siswa'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -357,7 +357,7 @@
                                                                         <i class="text-info"><b>Kordinat Rumah</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="kordinat" value="<?= $siswa['kordinat'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="kordinat" value="<?= $siswa['kordinat'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -368,7 +368,7 @@
                                                                         <i class="text-info"><b>Kode Pos</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="6" minlength="6" type="text" name="kodepos_siswa" value="<?= $siswa['kodepos_siswa'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="6" minlength="6" type="text" name="kodepos_siswa" value="<?= $siswa['kodepos_siswa'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -379,7 +379,7 @@
                                                                         <i class="text-info"><b>Alat transportasi</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='transportasi' required>
+                                                                <select class='form-control' name='transportasi' >
                                                                     <option value=''>Pilih transportasi</option>";
                                                                     <?php foreach ($transportasi as $val) { ?>
                                                                         <?php if ($siswa['transportasi'] == $val) { ?>
@@ -399,7 +399,7 @@
                                                                         <i class="text-info"><b>Jarak Rumah-Sekolah</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='jarak' required>
+                                                                <select class='form-control' name='jarak' >
                                                                     <option value=''>Pilih jarak</option>";
                                                                     <?php foreach ($jarak as $val) { ?>
                                                                         <?php if ($siswa['jarak'] == $val) { ?>
@@ -419,7 +419,7 @@
                                                                         <i class="text-info"><b>Waktu tempuh</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='waktu' required>
+                                                                <select class='form-control' name='waktu' >
                                                                     <option value=''>Pilih waktu</option>";
                                                                     <?php foreach ($waktu as $val) { ?>
                                                                         <?php if ($siswa['waktu'] == $val) { ?>
@@ -439,7 +439,7 @@
                                                                         <i class="text-info"><b>Yang membiayai sekolah</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='biaya_sekolah' required>
+                                                                <select class='form-control' name='biaya_sekolah' >
                                                                     <option value=''>Pilih biaya sekolah</option>";
                                                                     <?php foreach ($biaya_sekolah as $val) { ?>
                                                                         <?php if ($siswa['biaya_sekolah'] == $val) { ?>
@@ -459,7 +459,7 @@
                                                                         <i class="text-info"><b>Kebutuhan Khusus</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='keb_khusus' required>
+                                                                <select class='form-control' name='keb_khusus' >
                                                                     <option value=''></option>";
                                                                     <?php foreach ($keb_khusus as $val) { ?>
                                                                         <?php if ($siswa['keb_khusus'] == $val) { ?>
@@ -479,7 +479,7 @@
                                                                         <i class="text-info"><b>Kebutuhan Disabilitas</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='keb_disabilitas' required>
+                                                                <select class='form-control' name='keb_disabilitas' >
                                                                     <option value=''></option>";
                                                                     <?php foreach ($keb_disabilitas as $val) { ?>
                                                                         <?php if ($siswa['keb_disabilitas'] == $val) { ?>
@@ -570,7 +570,7 @@
                                                                         <i class="text-info"><b>No. KK</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" name="no_kk" value="<?= $siswa['no_kk'] ?>" required="required" />
+                                                                <input class="form-control" type="text" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" name="no_kk" value="<?= $siswa['no_kk'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -581,7 +581,7 @@
                                                                         <i class="text-info"><b>Nama Kepala Keluarga</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="kepala_keluarga" value="<?= $siswa['kepala_keluarga'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="kepala_keluarga" value="<?= $siswa['kepala_keluarga'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -597,7 +597,7 @@
                                             <!-- DATA AYAH -->
                                             <div class="tab-pane fade" id="dataayah" role="tabpanel" aria-labelledby="data-ayah">
                                                 <form id="form-dataayah">
-                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
+                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" >
                                                     <div class="form-row">
                                                         <div class="form-group col-md-12">
                                                             <div class="input-group">
@@ -606,7 +606,7 @@
                                                                         <i class="text-info"><b>Nama</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="nama_ayah" value="<?= $siswa['nama_ayah'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="nama_ayah" value="<?= $siswa['nama_ayah'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -633,7 +633,7 @@
                                                                         <i class="text-info"><b>Kewarganegaraan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='warga_ayah' required>
+                                                                <select class='form-control' name='warga_ayah' >
                                                                     <option value=''>Pilih Kewarganegaraan</option>";
                                                                     <?php foreach ($kewarganegaraan as $val) { ?>
                                                                         <?php if ($siswa['warga_ayah'] == $val) { ?>
@@ -653,7 +653,7 @@
                                                                         <i class="text-info"><strong>NIK</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_ayah" value="<?= $siswa['nik_ayah'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_ayah" value="<?= $siswa['nik_ayah'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -664,7 +664,7 @@
                                                                         <i class="text-info"><strong>Tempat Lahir</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="tempat_lahir_ayah" value="<?= $siswa['tempat_lahir_ayah'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="tempat_lahir_ayah" value="<?= $siswa['tempat_lahir_ayah'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -675,7 +675,7 @@
                                                                         <i class="text-info"><strong>Tanggal Lahir</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="date" name="tgl_lahir_ayah" value="<?= $siswa['tgl_lahir_ayah'] ?>" required="required" />
+                                                                <input class="form-control" type="date" name="tgl_lahir_ayah" value="<?= $siswa['tgl_lahir_ayah'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -686,7 +686,7 @@
                                                                         <i class="text-info"><b>Pendidikan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='pendidikan_ayah' required>
+                                                                <select class='form-control' name='pendidikan_ayah' >
                                                                     <option value=''>Pilih Pendidikan</option>";
                                                                     <?php foreach ($pendidikan as $val) { ?>
                                                                         <?php if ($siswa['pendidikan_ayah'] == $val) { ?>
@@ -706,7 +706,7 @@
                                                                         <i class="text-info"><b>Pekerjaan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='pekerjaan_ayah' required>
+                                                                <select class='form-control' name='pekerjaan_ayah' >
                                                                     <option value=''>Pilih Pekerjaan</option>";
                                                                     <?php foreach ($pekerjaan as $val) { ?>
                                                                         <?php if ($siswa['pekerjaan_ayah'] == $val) { ?>
@@ -726,7 +726,7 @@
                                                                         <i class="text-info"><b>Penghasilan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='penghasilan_ayah' required>
+                                                                <select class='form-control' name='penghasilan_ayah' >
                                                                     <option value=''>Pilih Penghasilan</option>";
                                                                     <?php foreach ($penghasilan as $val) { ?>
                                                                         <?php if ($siswa['penghasilan_ayah'] == $val) { ?>
@@ -746,7 +746,7 @@
                                                                         <i class="text-info"><b>No Hp</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_ayah" value="<?= $siswa['no_hp_ayah'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_ayah" value="<?= $siswa['no_hp_ayah'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -769,7 +769,7 @@
                                                                         <i class="text-info"><b>Status Tempat Tinggal</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='status_tmp_tinggal_ayah' required>
+                                                                <select class='form-control' name='status_tmp_tinggal_ayah' >
                                                                     <option value=''></option>";
                                                                     <?php foreach ($statustinggal as $val) { ?>
                                                                         <?php if ($siswa['status_tmp_tinggal_ayah'] == $val) { ?>
@@ -790,7 +790,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <input class="form-control" type="text" name="prov_ayah" value="<?= $siswa['prov_ayah'] ?>" />
-                                                                <!--<select class='form-control' id="form_prov_ayah" name='prov_ayah' required>
+                                                                <!--<select class='form-control' id="form_prov_ayah" name='prov_ayah' >
                                                                         <option value=""><?= $siswa['prov_ayah'] ?></option>
                                                                         <?php
                                                                         $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
@@ -811,7 +811,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <input class="form-control" type="text" name="kab_ayah" value="<?= $siswa['kab_ayah'] ?>" />
-                                                                <!--<select class='form-control' id="form_kab_ayah" name='kab_ayah' required>
+                                                                <!--<select class='form-control' id="form_kab_ayah" name='kab_ayah' >
                                                                         <option value="<?= $siswa['kab_ayah'] ?>"><?= $siswa['kab_ayah'] ?></option>
                                                                     </select>-->
                                                             </div>
@@ -824,7 +824,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <input class="form-control" type="text" name="kec_ayah" value="<?= $siswa['kec_ayah'] ?>" />
-                                                                <!--<select class='form-control' id="form_kec_ayah" name='kec_ayah' required>
+                                                                <!--<select class='form-control' id="form_kec_ayah" name='kec_ayah' >
                                                                         <option value="<?= $siswa['kec_ayah'] ?>"><?= $siswa['kec_ayah'] ?></option>
                                                                     </select>-->
                                                             </div>
@@ -837,7 +837,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <input class="form-control" type="text" name="desa_ayah" value="<?= $siswa['desa_ayah'] ?>" />
-                                                                <!--<select class='form-control' id="form_des_ayah" name='desa_ayah' required>
+                                                                <!--<select class='form-control' id="form_des_ayah" name='desa_ayah' >
                                                                         <option value="<?= $siswa['desa_ayah'] ?>"><?= $siswa['desa_ayah'] ?></option>
                                                                     </select>-->
                                                             </div>
@@ -849,7 +849,7 @@
                                                                         <i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="alamat_ayah" value="<?= $siswa['alamat_ayah'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="alamat_ayah" value="<?= $siswa['alamat_ayah'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -860,7 +860,7 @@
                                                                         <i class="text-info"><strong>Kodepos</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="kodepos_ayah" value="<?= $siswa['kodepos_ayah'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="kodepos_ayah" value="<?= $siswa['kodepos_ayah'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -876,7 +876,7 @@
                                             <!-- DATA IBU -->
                                             <div class="tab-pane fade" id="dataibu" role="tabpanel" aria-labelledby="data-ibu">
                                                 <form id="form-dataibu">
-                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
+                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" >
                                                     <div class="form-row">
                                                         <div class="form-group col-md-12">
                                                             <div class="input-group">
@@ -885,7 +885,7 @@
                                                                         <i class="text-info"><b>Nama</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="nama_ibu" value="<?= $siswa['nama_ibu'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="nama_ibu" value="<?= $siswa['nama_ibu'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -912,7 +912,7 @@
                                                                         <i class="text-info"><b>Kewarganegaraan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='warga_ibu' required>
+                                                                <select class='form-control' name='warga_ibu' >
                                                                     <option value=''>Pilih Kewarganegaraan</option>";
                                                                     <?php foreach ($kewarganegaraan as $val) { ?>
                                                                         <?php if ($siswa['warga_ibu'] == $val) { ?>
@@ -932,7 +932,7 @@
                                                                         <i class="text-info"><strong>NIK</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_ibu" value="<?= $siswa['nik_ibu'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" type="text" name="nik_ibu" value="<?= $siswa['nik_ibu'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -943,7 +943,7 @@
                                                                         <i class="text-info"><strong>Tempat Lahir</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="text" name="tempat_lahir_ibu" value="<?= $siswa['tempat_lahir_ibu'] ?>" required="required" />
+                                                                <input class="form-control" type="text" name="tempat_lahir_ibu" value="<?= $siswa['tempat_lahir_ibu'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -954,7 +954,7 @@
                                                                         <i class="text-info"><strong>Tanggal Lahir</strong></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" type="date" name="tgl_lahir_ibu" value="<?= $siswa['tgl_lahir_ibu'] ?>" required="required" />
+                                                                <input class="form-control" type="date" name="tgl_lahir_ibu" value="<?= $siswa['tgl_lahir_ibu'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -965,7 +965,7 @@
                                                                         <i class="text-info"><b>Pendidikan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='pendidikan_ibu' required>
+                                                                <select class='form-control' name='pendidikan_ibu' >
                                                                     <option value=''>Pilih Pendidikan</option>";
                                                                     <?php foreach ($pendidikan as $val) { ?>
                                                                         <?php if ($siswa['pendidikan_ibu'] == $val) { ?>
@@ -985,7 +985,7 @@
                                                                         <i class="text-info"><b>Pekerjaan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='pekerjaan_ibu' required>
+                                                                <select class='form-control' name='pekerjaan_ibu' >
                                                                     <option value=''>Pilih Pekerjaan</option>";
                                                                     <?php foreach ($pekerjaan as $val) { ?>
                                                                         <?php if ($siswa['pekerjaan_ibu'] == $val) { ?>
@@ -1005,7 +1005,7 @@
                                                                         <i class="text-info"><b>Penghasilan</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <select class='form-control' name='penghasilan_ibu' required>
+                                                                <select class='form-control' name='penghasilan_ibu' >
                                                                     <option value=''>Pilih Penghasilan</option>";
                                                                     <?php foreach ($penghasilan as $val) { ?>
                                                                         <?php if ($siswa['penghasilan_ibu'] == $val) { ?>
@@ -1025,7 +1025,7 @@
                                                                         <i class="text-info"><b>No Hp</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_ibu" value="<?= $siswa['no_hp_ibu'] ?>" required="required" />
+                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp_ibu" value="<?= $siswa['no_hp_ibu'] ?>"  />
                                                             </div>
                                                         </div>
 
@@ -1165,7 +1165,7 @@
                                             <!-- DATA WALI -->
                                             <div class="tab-pane fade" id="datawali" role="tabpanel" aria-labelledby="data-wali">
                                                 <form id="form-datawali">
-                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
+                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" >
                                                     <div class="form-row">
                                                         <div class="form-group col-md-12">
                                                             <div class="text-info"><strong>Status wali</strong></div>
@@ -1424,7 +1424,7 @@
 
                                             <div class="tab-pane fade" id="datadokumen" role="tabpanel" aria-labelledby="data-dokumen">
                                                 <form id="form-berkas">
-                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
+                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" >
                                                     <div class="card" id="berkas-card">
                                                         <div class="card-body">
                                                             <div class="form-group row align-items-center">
@@ -1538,9 +1538,12 @@
                         message: 'Data Berhasil disimpan',
                         position: 'topRight'
                     });
+                    setTimeout(function() {
+                    window.location.reload();
+                    }, 2000);
                 }
             });
-            return false;
+            // return false;
         });
     });
 </script>
@@ -1567,9 +1570,12 @@
                         message: 'Data Berhasil disimpan',
                         position: 'topRight'
                     });
+                    setTimeout(function() {
+                    window.location.reload();
+                    }, 2000);
                 }
             });
-            return false;
+            // return false;
         });
     });
 </script>
@@ -1604,9 +1610,12 @@
                         message: 'Data Berhasil disimpan',
                         position: 'topRight'
                     });
+                    setTimeout(function() {
+                    window.location.reload();
+                    }, 2000);
                 }
             });
-            return false;
+            // return false;
         });
     });
 </script>
