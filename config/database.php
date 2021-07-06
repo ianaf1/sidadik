@@ -1,9 +1,9 @@
 <?php
 // deklarasi parameter koneksi database
 $server   = "localhost";
-$username = "root";
-$password = "";
-$database = "sidadik";
+$username = "u3688835_yastu";
+$password = "mayastu2020";
+$database = "u3688835_sidadik";
 
 // koneksi database
 $koneksi = mysqli_connect($server, $username, $password, $database);
