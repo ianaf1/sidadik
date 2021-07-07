@@ -183,7 +183,7 @@
                                 <form id="form-login">
                                     <div class="form-group">
                                         <span class="fa fa-user"></span>
-                                        <input type="text" onkeyup="this.value = this.value.toUpperCase()" class="form-control" name="username" placeholder="Masukkan NISN" required autocomplete="off">
+                                        <input type="text" onkeyup="this.value = this.value.toUpperCase()" class="form-control" name="username" placeholder="Masukkan NIS" required autocomplete="off">
                                     </div>
                                     <div class="form-group">
                                         <span class="fa fa-key"></span>

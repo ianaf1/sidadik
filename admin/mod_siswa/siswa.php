@@ -220,7 +220,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                                         <div class="modal-body">
                                                             <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
                                                             <div class="form-group">
-                                                                <div class="control-label">Edit Kelas<?= $no ?></div>
+                                                                <div class="control-label">Edit Kelas</div>
                                                                 <select class="form-control" style="width: 100%" name="kelas" id="kelas" >
                                                                     <option value="">Pilih kelas</option>   
                                                                     <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
