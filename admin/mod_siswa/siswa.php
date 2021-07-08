@@ -221,7 +221,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                                             <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
                                                             <div class="form-group">
                                                                 <div class="control-label">Edit Kelas</div>
-                                                                <input type="number" name="kelas" class="form-control" value="<?= $daftar['kelas'] ?>" >
+                                                                <input type="number" name="kelas" class="form-control" value="<?= $siswa['kelas'] ?>" >
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
