@@ -285,7 +285,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                         e.preventDefault();
                                         $.ajax({
                                             type: 'POST',
-                                            url: 'mod_daftar/crud_siswa.php?pg=simpankelas',
+                                            url: 'mod_siswa/crud_siswa.php?pg=simpankelas',
                                             data: $(this).serialize(),
                                             success: function(data) {
                                     
