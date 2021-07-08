@@ -159,9 +159,9 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                     <table style="font-size: 12px" class="table table-striped table-sm" id="table-1">
                         <thead>
                             <tr>
-                                <th class="text-center">
+                                <!-- <th class="text-center">
                                     No
-                                </th>
+                                </th> -->
                                 <th>Nama Siswa</th>
                                 <th>NIS</th>
                                 <th>Password</th>
@@ -180,7 +180,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                 $no++;
                             ?>
                                 <tr>
-                                    <td><?= $no; ?></td>
+                                    <!-- <td><?= $no; ?></td> -->
                                     <td><?= $siswa['nama_siswa'] ?></td>
                                     <td><?= $siswa['nis'] ?></td>
                                     <td><?= $siswa['password'] ?></td>
