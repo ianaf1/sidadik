@@ -223,7 +223,12 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                                                 <div class="control-label">Edit Kelas</div>
                                                                 <select class="form-control" style="width: 100%" name="kelas" id="kelas" >
                                                                     <option value="">Pilih kelas</option>   
-                                                                    <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
+                                                                    <?php
+                                                                        $query = mysqli_query($koneksi, "select * from kelas where status='1'");
+                                                                        while ($kelas = mysqli_fetch_array($query)) {
+                                                                        ?>
+                                                                            <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
+                                                                    <?php } ?>
                                                                 </select>
                                                             </div>
                                                         </div>
