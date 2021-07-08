@@ -283,7 +283,7 @@
                             <div class="card mt-2">
                                 <div class="card-header bg-primary">Jumlah Siswa</div>
                                 <div class="card-body">
-                                    <h2 class="text-center"><?= rowcount($koneksi, 'siswa') ?></h2>
+                                    <h2 class="text-center"><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where kelas = '10'")) ?></h2>
                                 </div>
                             </div>
                         </div>
@@ -291,7 +291,7 @@
                             <div class="card mt-2">
                                 <div class="card-header bg-warning">Laki-laki</div>
                                 <div class="card-body">
-                                    <h2 class="text-center"><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where jk = 'L'")) ?></h2>
+                                    <h2 class="text-center"><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where jk = 'L' && kelas = '10'")) ?></h2>
                                 </div>
                             </div>
                         </div>
@@ -299,7 +299,7 @@
                             <div class="card mt-2">
                                 <div class="card-header bg-success">Perempuan</div>
                                 <div class="card-body">
-                                    <h2 class="text-center"><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where jk = 'P'")) ?></h2>
+                                    <h2 class="text-center"><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where jk = 'P' && kelas = '10'")) ?></h2>
                                 </div>
                             </div>
                         </div>
