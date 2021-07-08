@@ -4,6 +4,8 @@ if ($pg == '') {
     include "home.php";
 } elseif ($pg == 'siswa') {
     include "mod_siswa/siswa.php";
+} elseif ($pg == 'updatekelas') {
+    include "mod_siswa/updatekelas.php";
 } elseif ($pg == 'berkas') {
     include "mod_berkas/upload.php";
 } elseif ($pg == 'berkas_sidadik') {
