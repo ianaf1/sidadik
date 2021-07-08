@@ -227,7 +227,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                                                         $query = mysqli_query($koneksi, "select * from kelas where status='1'");
                                                                         while ($kelas = mysqli_fetch_array($query)) {
                                                                         ?>
-                                                                            <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
+                                                                            <option value="<?= $siswa['kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
                                                                     <?php } ?>
                                                                 </select>
                                                             </div>
