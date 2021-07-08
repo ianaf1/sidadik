@@ -221,19 +221,11 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                                             <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
                                                             <div class="form-group">
                                                                 <div class="control-label">Edit Kelas</div>
-                                                                <select class="form-control" style="width: 100%" name="kelas" id="kelas" >
-                                                                    <option value="">Pilih kelas</option>   
-                                                                    <?php
-                                                                        $query = mysqli_query($koneksi, "select * from kelas where status='1'");
-                                                                        while ($kelas = mysqli_fetch_array($query)) {
-                                                                        ?>
-                                                                            <option value="<?= $siswa['kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
-                                                                    <?php } ?>
-                                                                </select>
+                                                                <input type="number" name="kelas" class="form-control" value="<?= $daftar['kelas'] ?>" >
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                             <button type="submit" class="btn btn-primary">Save</button>
                                                         </div>
                                                     </form>
