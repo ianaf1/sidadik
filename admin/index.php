@@ -215,8 +215,8 @@ if (isset($_SESSION['id_user'])) {
         <div class="footer-left">
           Copyright &copy; <?= date('Y') ?> SIDADIK | <?= $setting['nama_sekolah'] ?>
         </div>
-        <div class="footer-right">
-          Kang Melek
+        <div class="footer-right" href="https://instagram.com/ianfatah1">
+          Ian Fatah
 
         </div>
       </footer>
