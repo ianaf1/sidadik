@@ -271,7 +271,7 @@
                     $no_pkh = $data->val($i, 41);
                     $no_kk = addslashes($data->val($i, 42));
                     $kepala_keluarga = $data->val($i, 43);
-                    $nama_ayah = $data->val($i, 44);
+                    $nama_ayah = addslashes($data->val($i, 44));
                     $status_ayah = $data->val($i, 45);
                     $warga_ayah = $data->val($i, 46);
                     $nik_ayah = addslashes($data->val($i, 47));
@@ -281,7 +281,7 @@
                     $pekerjaan_ayah = $data->val($i, 51);
                     $penghasilan_ayah = $data->val($i, 52);
                     $no_hp_ayah = addslashes($data->val($i, 53));
-                    $nama_ibu = $data->val($i, 54);
+                    $nama_ibu = addslashes($data->val($i, 54));
                     $status_ibu = $data->val($i, 55);
                     $warga_ibu = $data->val($i, 56);
                     $nik_ibu = addslashes($data->val($i, 57));
@@ -349,7 +349,7 @@
                             'no_pkh' => $no_pkh,
                             'no_kk' => $no_kk,
                             'kepala_keluarga' => $kepala_keluarga,
-                            'nama_ayah' => $nama_ayah,
+                            'nama_ayah' => strtoupper($nama_ayah),
                             'status_ayah' => $status_ayah,
                             'warga_ayah' => $warga_ayah,
                             'nik_ayah' => $nik_ayah,
@@ -359,7 +359,7 @@
                             'pekerjaan_ayah' => $pekerjaan_ayah,
                             'penghasilan_ayah' => $penghasilan_ayah,
                             'no_hp_ayah' => $no_hp_ayah,
-                            'nama_ibu' => $nama_ibu,
+                            'nama_ibu' => strtoupper($nama_ibu),
                             'status_ibu' => $status_ibu,
                             'warga_ibu' => $warga_ibu,
                             'nik_ibu' => $nik_ibu,
