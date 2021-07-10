@@ -12,7 +12,10 @@
          <a href="#" class="nav-link has-dropdown"><i class="fas fa-user-friends"></i> <span>Data Siswa</span></a>
          <ul class="dropdown-menu">
              <li><a class="nav-link" href="?pg=siswa">Siswa Aktif</a></li>
-             <li><a class="nav-link" href="?pg=updatekelas">Update Kelas</a></li>
+             <li><a class="nav-link" href="?pg=siswa10">Siswa Aktif 10</a></li>
+             <li><a class="nav-link" href="?pg=siswa11">Siswa Kelas 11</a></li>
+             <li><a class="nav-link" href="?pg=siswa12">Siswa Kelas 12</a></li>
+             <!-- <li><a class="nav-link" href="?pg=updatekelas">Update Kelas</a></li> -->
              <li><a class="nav-link" href="?pg=berkas_sidadik">Dokumen Siswa</a></li>
          </ul>
      </li>
