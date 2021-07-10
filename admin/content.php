@@ -4,6 +4,12 @@ if ($pg == '') {
     include "home.php";
 } elseif ($pg == 'siswa') {
     include "mod_siswa/siswa.php";
+} elseif ($pg == 'siswa10') {
+    include "mod_siswa/siswa10.php";
+} elseif ($pg == 'siswa11') {
+    include "mod_siswa/siswa11.php";
+} elseif ($pg == 'siswa12') {
+    include "mod_siswa/siswa12.php";
 } elseif ($pg == 'updatekelas') {
     include "mod_siswa/updatekelas.php";
 } elseif ($pg == 'berkas') {
