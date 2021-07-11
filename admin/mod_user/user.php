@@ -168,7 +168,10 @@
 												<select class="form-control" name="level" id="level" required>
 													<option value="">Pilih Level</option>
 													<option value="admin">Administrator</option>
-													
+													<option value="admin">Administrator</option>
+													<option value="bendahara">Bendahara</option>
+													<option value="kurikulum">Kurikulum</option>
+													<option value="Staff">Staff</option>
 												</select>
 											</div>
 
