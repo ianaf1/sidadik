@@ -22,7 +22,7 @@
 											</thead>
 											 <tbody>
 												<?php
-												 $query = mysqli_query($koneksi, "select * from user where level='admin'");
+												 $query = mysqli_query($koneksi, "select * from user where status='1'");
 												$no = 0;
 												while ($user = mysqli_fetch_array($query)) {
 													$no++;
@@ -167,7 +167,6 @@
 												<label for="level">Level</label>
 												<select class="form-control" name="level" id="level" required>
 													<option value="">Pilih Level</option>
-													<option value="admin">Administrator</option>
 													<option value="admin">Administrator</option>
 													<option value="bendahara">Bendahara</option>
 													<option value="kurikulum">Kurikulum</option>
