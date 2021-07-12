@@ -161,9 +161,9 @@
     }
 
     if ($pg == 'konfirmasi12') {
-        $$data = [];
+        $data = [mysqli_query($koneksi, "select * from siswa where kelas = '12'")];
 
-        $exec = delete($koneksi, 'siswa', $data, ['kelas' => $kelas]);
+        $exec = delete($koneksi, 'siswa', $data, ['id_siswa' => $id_siswa]);
         if ($exec) {
             $pesan = [
                 'pesan' => 'Selamat.... Data Pensiswa Berhasil Dikosongkan'
