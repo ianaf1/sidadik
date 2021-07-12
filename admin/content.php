@@ -43,4 +43,7 @@ if ($pg == '') {
 } elseif ($pg == 'kontak') {
     cek_login_admin();
     include "mod_kontak/kontak.php";
+} elseif ($pg == 'buatsurat') {
+    cek_login_admin();
+    include "mod_surat/buatsurat.php";
 }

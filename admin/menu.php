@@ -22,8 +22,9 @@
      <li class="dropdown ">
          <a href="#" class="nav-link has-dropdown"><i class="fas fa-user-friends"></i> <span>Arsip Surat</span></a>
          <ul class="dropdown-menu">
-             <li><a class="nav-link" href="?pg=suratmasuk">Surat Masuk</a></li>
-             <li><a class="nav-link" href="?pg=suratkeluar">Surat Keluar</a></li>
+            <li><a class="nav-link" href="?pg=buatsurat">Buat Surat</a></li>
+            <li><a class="nav-link" href="?pg=suratmasuk">Surat Masuk</a></li>
+            <li><a class="nav-link" href="?pg=suratkeluar">Surat Keluar</a></li>
          </ul>
      </li>
 
