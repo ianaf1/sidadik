@@ -160,6 +160,23 @@
         }
     }
 
+    if ($pg == 'konfirmasi12') {
+        $$data = [];
+
+        $exec = delete($koneksi, 'siswa', $data, ['kelas' => $kelas]);
+        if ($exec) {
+            $pesan = [
+                'pesan' => 'Selamat.... Data Pensiswa Berhasil Dikosongkan'
+            ];
+            echo 'ok';
+        } else {
+            $pesan = [
+                'pesan' => mysqli_error($koneksi)
+            ];
+            echo mysqli_error($koneksi);
+        }
+    }
+
 
     if ($pg == 'konfirmasi') {
         $$data = [];

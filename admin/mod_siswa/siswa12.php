@@ -86,7 +86,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
 <div class="modal fade" id="hapusdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form id="form-konfirmasi">
+            <form id="form-konfirmasi12">
                 <div class="modal-header">
                     <h5 class="modal-title">Hapus Data Siswa</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -95,7 +95,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                 </div>
                 <div class="modal-body">
 
-                    Terdapat <b><?= rowcount($koneksi, 'siswa') ?></b> Jumlah data Siswa Akan Di Hapus.
+                    Terdapat <b><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where kelas = '10'")) ?></b> Jumlah data Siswa Akan Di Hapus.
 
 
                 </div>
@@ -439,7 +439,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
     });
 </script>
 <script>
-    $('#form-konfirmasi').submit(function(e) {
+    $('#form-konfirmasi12').submit(function(e) {
         e.preventDefault();
         swal({
             title: 'Apa kamu yakin ?',

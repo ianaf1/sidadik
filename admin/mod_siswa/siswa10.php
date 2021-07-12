@@ -95,7 +95,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                 </div>
                 <div class="modal-body">
 
-                    Terdapat <b><?= rowcount($koneksi, 'siswa') ?></b> Jumlah data Siswa Akan Di Hapus.
+                    Terdapat <b><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where kelas = '10'")) ?></b> Jumlah data Siswa Akan Di Hapus.
 
 
                 </div>
