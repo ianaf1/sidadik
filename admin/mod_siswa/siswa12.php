@@ -1,156 +1,12 @@
 <?php defined('BASEPATH') or die("ip anda sudah tercatat oleh sistem kami") ?>
 
-<?php
-$sql = mysqli_query($koneksi, "select max(nis) as maxID from siswa");
-$data = mysqli_fetch_array($sql);
-
-$kode = $data['maxID'];
-
-$nourut = (int) substr($kode, 14, 4);
-$nourut++;
-$ket = "131236010019";
-$th = "21";
-$nisbaru = $ket . $th . sprintf("%04s", $nourut);
-?>
-
-<!-- Modal -->
-<div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form id="form-tambah">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tambah Data Siswa</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>NIS</label>
-                        <input type="text" name="nis" class="form-control nis" readonly value="<?php echo $nisbaru ?>" >
-                    </div>
-                    <div class="form-group">
-                        <label>Nama Siswa</label>
-                        <input type="text" name="nama" class="form-control" >
-                    </div>
-                    <div class="form-group">
-                        <div class="text-info"><strong>Jenis Kelamin</strong></div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" name="jk" class="custom-control-input" value="L" <?php if ($siswa['jk'] == 'L') echo 'checked' ?>>
-                            <label class="custom-control-label" for="customRadioInline1">Laki-laki</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="jk" class="custom-control-input" value="P" <?php if ($siswa['jk'] == 'P') echo 'checked' ?>>
-                            <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
-                        </div>
-                    </div>
-                    <!-- <div class="form-group">
-                        <label for="kelas">Kelas</label>
-                        <select class="form-control" style="width: 100%" name="kelas" id="kelas" >
-                            <option value="">Pilih kelas</option>
-                            <?php
-                            $query = mysqli_query($koneksi, "select * from kelas where status='1'");
-                            while ($kelas = mysqli_fetch_array($query)) {
-                            ?>
-                                <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div> -->
-                    <div class="form-group">
-                        <label for="jurusan">Pilihan Jurusan</label>
-                        <select class="form-control" name="jurusan" id="jurusan" required>
-                            <option value="">Pilih Jurusan</option>
-                            <?php
-                            $query = mysqli_query($koneksi, "select * from jurusan where status='1'");
-                            while ($jurusan = mysqli_fetch_array($query)) {
-                            ?>
-                                <option value="<?= $jurusan['nama_jurusan'] ?>"><?= $jurusan['nama_jurusan'] ?></option>
-                            <?php } ?>
-
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="text" name="password" class="form-control password" required>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="hapusdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form id="form-konfirmasi12">
-                <div class="modal-header">
-                    <h5 class="modal-title">Hapus Data Siswa</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    Terdapat <b><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where kelas = '12'")) ?></b> Jumlah data Siswa Akan Di Hapus.
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Hapus Semua</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="importdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form id="form-import">
-                <div class="modal-header">
-                    <h5 class="modal-title">Import Data</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="file">Import File Excel</label>
-                        <input type="file" class="form-control-file" name="file" id="file" placeholder="" aria-describedby="helpfile" required>
-                        <small id="helpfile" class="form-text text-muted">File harus .xls</small>
-                    </div>
-
-                    <p><a href="template_excel/importsiswa.xls">Download Format</a></p>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4>Data Siswa</h4>
+                <h2>Data Siswa Kelas XII</h2>
                 <div class="card-header-action">
-                    <a class="btn btn-info" href="mod_siswa/export_excel.php" role="button"> Export Data</a>
-                    <button type="button" class="btn btn-icon icon-left btn-warning" data-toggle="modal" data-target="#tambahdata">
-                        <i class="far fa-edit"></i> Tambah Data
-                    </button>
-                    <button type="button" class="btn btn-primary m-b-5" data-toggle="modal" data-target="#importdata"><i class="sidebar-item-icon fa fa-upload"></i>
-                        Import Data
-                    </button>&nbsp;
-                    <button type="button" class="btn btn-icon icon-left btn-danger" data-toggle="modal" data-target="#hapusdata">
-                        <i class="fa fa-trash"></i> Hapus Data
-                    </button>
+                    <a class="btn btn-info" href="mod_siswa/export_excel12.php" role="button"> Export Data</a>
                 </div>
             </div>
 
@@ -164,9 +20,9 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                 </th> -->
                                 <th>Nama Siswa</th>
                                 <th>NIS</th>
-                                <th>Password</th>
+                                <!-- <th>Password</th> -->
                                 <th>L/P</th>
-                                <!-- <th>TTL</th> -->
+                                <th>TTL</th>
                                 <th>Kelas</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -174,7 +30,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                         </thead>
                         <tbody>
                             <?php
-                            $query = mysqli_query($koneksi, "select * from siswa WHERE status='1' && kelas='12'");
+                            $query = mysqli_query($koneksi, "select * from siswa WHERE status='1' && kelas ='12'");
                             $no = 0;
                             while ($siswa = mysqli_fetch_array($query)) {
                                 $no++;
@@ -183,9 +39,9 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                     <!-- <td><?= $no; ?></td> -->
                                     <td><?= $siswa['nama_siswa'] ?></td>
                                     <td><?= $siswa['nis'] ?></td>
-                                    <td><?= $siswa['password'] ?></td>
+                                    <!-- <td><?= $siswa['password'] ?></td> -->
                                     <td><?= $siswa['jk'] ?></td>
-                                    <!-- <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td> -->
+                                    <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
                                     <td><?= $siswa['kelas'] ?></td>
 
                                     <td>
@@ -338,39 +194,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
 </div>
 
 
-<script>
-    //IMPORT FILE PENDUKUNG 
-    $('#form-import').on('submit', function(e) {
-        e.preventDefault();
-        $.ajax({
-            type: 'post',
-            url: 'mod_siswa/crud_siswa.php?pg=import',
-            data: new FormData(this),
-            processData: false,
-            contentType: false,
-            cache: false,
-            beforeSend: function() {
-                $('form button').on("click", function(e) {
-                    e.preventDefault();
-                });
-            },
-            success: function(data) {
 
-                $('#importdata').modal('hide');
-                iziToast.success({
-                    title: 'Mantap!',
-                    message: data,
-                    position: 'topRight'
-                });
-                setTimeout(function() {
-                    window.location.reload();
-                }, 2000);
-
-
-            }
-        });
-    });
-</script>
 
 <script>
     var cleaveI = new Cleave('.nis', {
@@ -438,34 +262,4 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
 
     });
 </script>
-<script>
-    $('#form-konfirmasi12').submit(function(e) {
-        e.preventDefault();
-        swal({
-            title: 'Apa kamu yakin ?',
-            text: 'Akan Menghapus data anda ?',
-            icon: 'warning',
-            buttons: true,
-            dangerMode: true,
-        }).then((result) => {
-            if (result) {
-                $.ajax({
-                    url: 'mod_siswa/crud_siswa.php?pg=konfirmasi',
-                    method: "POST",
-                    data: $(this).serialize(),
-                    success: function(data) {
-                        iziToast.success({
-                            title: 'Terimakasih!',
-                            message: 'Data Berhasil di Hapus',
-                            position: 'topRight'
-                        });
-                        setTimeout(function() {
-                            window.location.reload();
-                        }, 1000);
-                    }
-                });
-            }
-        })
 
-    });
-</script>

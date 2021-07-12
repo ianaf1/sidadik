@@ -160,23 +160,6 @@
         }
     }
 
-    if ($pg == 'konfirmasi12') {
-        $data = [mysqli_query($koneksi, "select * from siswa where kelas = '12'")];
-
-        $exec = delete($koneksi, 'siswa', $data, ['id_siswa' => $id_siswa]);
-        if ($exec) {
-            $pesan = [
-                'pesan' => 'Selamat.... Data Pensiswa Berhasil Dikosongkan'
-            ];
-            echo 'ok';
-        } else {
-            $pesan = [
-                'pesan' => mysqli_error($koneksi)
-            ];
-            echo mysqli_error($koneksi);
-        }
-    }
-
 
     if ($pg == 'konfirmasi') {
         $$data = [];
