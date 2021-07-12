@@ -44,19 +44,11 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                             <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
                         </div>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="kelas">Kelas</label>
-                        <select class="form-control" style="width: 100%" name="kelas" id="kelas" >
-                            <option value="">Pilih kelas</option>
-                            <?php
-                            $query = mysqli_query($koneksi, "select * from kelas where status='1'");
-                            while ($kelas = mysqli_fetch_array($query)) {
-                            ?>
-                                <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div> -->
                     <div class="form-group">
+                        <label for="kelas">Kelas</label>
+                        <input type="number" name="kelas" class="form-control" >
+                    </div>
+                    <!-- <div class="form-group">
                         <label for="jurusan">Pilihan Jurusan</label>
                         <select class="form-control" name="jurusan" id="jurusan" required>
                             <option value="">Pilih Jurusan</option>
@@ -68,7 +60,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                             <?php } ?>
 
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>Password</label>
                         <input type="text" name="password" class="form-control password" required>
