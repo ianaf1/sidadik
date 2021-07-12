@@ -164,9 +164,9 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                 </th> -->
                                 <th>Nama Siswa</th>
                                 <th>NIS</th>
-                                <th>Password</th>
+                                <!-- <th>Password</th> -->
                                 <th>L/P</th>
-                                <!-- <th>TTL</th> -->
+                                <th>TTL</th>
                                 <th>Kelas</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -183,9 +183,9 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                     <!-- <td><?= $no; ?></td> -->
                                     <td><?= $siswa['nama_siswa'] ?></td>
                                     <td><?= $siswa['nis'] ?></td>
-                                    <td><?= $siswa['password'] ?></td>
+                                    <!-- <td><?= $siswa['password'] ?></td> -->
                                     <td><?= $siswa['jk'] ?></td>
-                                    <!-- <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td> -->
+                                    <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
                                     <td><?= $siswa['kelas'] ?></td>
 
                                     <td>
