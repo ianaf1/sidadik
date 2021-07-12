@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3>Data Siswa Kelas XII</h3>
+                <h4>Data Kelas XII</h4>
                 <div class="card-header-action">
                     <a class="btn btn-info" href="mod_siswa/export_excel12.php" role="button"> Export Data</a>
                 </div>

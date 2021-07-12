@@ -2,7 +2,7 @@
 require("../../config/database.php");
 // Skrip berikut ini adalah skrip yang bertugas untuk meng-export data tadi ke excell
 header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=DATA_SIDADIK.xls");
+header("Content-Disposition: attachment; filename=DATA_SISWA_KELAS_XI.xls");
 session_start();
 if (!isset($_SESSION['id_user'])) {
     die('Anda tidak diijinkan mengakses langsung');
