@@ -6,7 +6,7 @@ session_start();
 if ($pg == 'login') {
     $username = mysqli_escape_string($koneksi, $_POST['username']);
     $password = mysqli_escape_string($koneksi, $_POST['password']);
-    $siswaQ = mysqli_query($koneksi, "SELECT * FROM siswa WHERE nisn='$username'");
+    $siswaQ = mysqli_query($koneksi, "SELECT * FROM siswa WHERE nis='$username'");
     if ($username <> "" and $password <> "") {
         if (mysqli_num_rows($siswaQ) == 0) {
             $data = [
