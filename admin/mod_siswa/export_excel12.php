@@ -126,7 +126,7 @@ if (!isset($_SESSION['id_user'])) {
     </thead>
     <tbody>
         <?php
-        $query = mysqli_query($koneksi, "select * from siswa where kelas = '12'");
+        $query = mysqli_query($koneksi, "select * from siswa where kelas = '12' && status = '1'");
         $no = 0;
         while ($siswa = mysqli_fetch_array($query)) {
             $no++;
