@@ -12,6 +12,5 @@ deployment:
     - /bin/cp -R config $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH
     - /bin/cp -R dist $DEPLOYPATH
-    - /bin/cp -R temp $DEPLOYPATH
     - /bin/cp -R user $DEPLOYPATH
     - /bin/cp -R vendor $DEPLOYPATH
