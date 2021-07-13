@@ -31,6 +31,7 @@ if (!isset($_SESSION['id_user'])) {
             <th>Tempat Lahir</th>
             <th>Tanggal Lahir</th>
             <th>Jenis Kelamin</th>
+            <th>Kelas</th>
             <th>Anak Ke</th>
             <th>Jml Saudara</th>
             <th>Agama</th>
@@ -140,6 +141,7 @@ if (!isset($_SESSION['id_user'])) {
                 <td><?= $siswa['tempat_lahir'] ?></td>
                 <td class="str"><?= $siswa['tgl_lahir'] ?></td>
                 <td><?= $siswa['jk'] ?></td>
+                <td><?= $siswa['kelas'] ?></td>
                 <td><?= $siswa['anak_ke'] ?></td>
                 <td><?= $siswa['saudara'] ?></td>
                 <td><?= $siswa['agama'] ?></td>
