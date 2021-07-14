@@ -367,7 +367,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
 <script>
     var cleaveI = new Cleave('.nis', {
 
-        blocks: [20]
+        blocks: [18]
 
     });
 
