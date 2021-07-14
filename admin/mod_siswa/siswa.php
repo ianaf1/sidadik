@@ -48,7 +48,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                         <label for="kelas">Kelas</label>
                         <input type="number" name="kelas" class="form-control" >
                     </div>
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label for="jurusan">Pilihan Jurusan</label>
                         <select class="form-control" name="jurusan" id="jurusan" required>
                             <option value="">Pilih Jurusan</option>
@@ -60,7 +60,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                             <?php } ?>
 
                         </select>
-                    </div> -->
+                    </div>
                     <div class="form-group">
                         <label>Password</label>
                         <input type="text" name="password" class="form-control password" required>
