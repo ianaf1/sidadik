@@ -48,7 +48,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                         <label for="kelas">Kelas</label>
                         <input type="number" name="kelas" class="form-control" >
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="jurusan">Pilihan Jurusan</label>
                         <select class="form-control" name="jurusan" id="jurusan" required>
                             <option value="">Pilih Jurusan</option>
@@ -59,7 +59,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                 <option value="<?= $jurusan['nama_jurusan'] ?>"><?= $jurusan['nama_jurusan'] ?></option>
                             <?php } ?>
 
-                        </select>
+                        </select> -->
                     </div>
                     <div class="form-group">
                         <label>Password</label>
@@ -367,7 +367,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
 <script>
     var cleaveI = new Cleave('.nis', {
 
-        blocks: [18]
+        blocks: [20]
 
     });
 
