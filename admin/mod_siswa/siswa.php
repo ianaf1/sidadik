@@ -57,17 +57,9 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="hapusdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form id="form-konfirmasi">
-                <div class="modal-header">
+                        <label for="kelas">Kelas</label>
+                        <input type="number" name="kelas" class="form-control" >
+                    </div>
                     <h5 class="modal-title">Hapus Data Siswa</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -159,14 +151,14 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                             while ($siswa = mysqli_fetch_array($query)) {
                                 $no++;
                             ?>
-                                <tr>
+                                <!-- <th class="text-center">
                                     <!-- <td><?= $no; ?></td> -->
-                                    <td><?= $siswa['nama_siswa'] ?></td>
+                                </th> -->
                                     <td><?= $siswa['nis'] ?></td>
                                     <!-- <td><?= $siswa['password'] ?></td> -->
-                                    <td><?= $siswa['jk'] ?></td>
+                                <!-- <th>Password</th> -->
                                     <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
-                                    <td><?= $siswa['kelas'] ?></td>
+                                <th>TTL</th>
 
                                     <td>
                                         <?php if ($siswa['status'] == 1) { ?>
@@ -180,12 +172,12 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                     <td>
                                         <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?pg=ubahsiswa&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
+                                    <!-- <td><?= $no; ?></td> -->
                                             <i class="fas fa-user    "></i>
                                         </button>
-                                        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-editkelas<?= $no ?>">
+                                    <!-- <td><?= $siswa['password'] ?></td> -->
                                             <i class="fas fa-edit    "></i>
-                                        </button>
+                                    <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
                                         <!-- Modal -->
                                         <div class="modal fade" id="modal-editkelas<?= $no ?>" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
@@ -221,20 +213,11 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                                         <div class="modal-header">
                                                             <h5 class="modal-title">Ubah Status Siswa</h5>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" >
-                                                            <div class="form-group">
-                                                                <div class="control-label">Pilih Status</div>
-                                                                <div class="custom-switches-stacked mt-2">
-                                                                    <label class="custom-switch">
-                                                                        <input type="radio" name="status" value="1" class="custom-switch-input" checked>
+                                                                <input type="number" name="kelas" class="form-control" value="<?= $siswa['kelas'] ?>" >
                                                                         <span class="custom-switch-indicator"></span>
                                                                         <span class="custom-switch-description">Aktif</span>
                                                                     </label>
-                                                                    <label class="custom-switch">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                                                         <input type="radio" name="status" value="2" class="custom-switch-input">
                                                                         <span class="custom-switch-indicator"></span>
                                                                         <span class="custom-switch-description">Mutasi</span>
@@ -294,7 +277,7 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                                             success: function(data) {
                                                 iziToast.success({
                                                     title: 'OKee!',
-                                                    message: 'Status Berhasil diubah',
+                                            url: 'mod_siswa/crud_siswa.php?pg=simpankelas',
                                                     position: 'topRight'
                                                 });
                                                 setTimeout(function() {
