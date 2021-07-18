@@ -48,18 +48,6 @@ $nisbaru = $ket . $th . sprintf("%04s", $nourut);
                         <label for="kelas">Kelas</label>
                         <input type="number" name="kelas" class="form-control" >
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="jurusan">Pilihan Jurusan</label>
-                        <select class="form-control" name="jurusan" id="jurusan" required>
-                            <option value="">Pilih Jurusan</option>
-                            <?php
-                            $query = mysqli_query($koneksi, "select * from jurusan where status='1'");
-                            while ($jurusan = mysqli_fetch_array($query)) {
-                            ?>
-                                <option value="<?= $jurusan['nama_jurusan'] ?>"><?= $jurusan['nama_jurusan'] ?></option>
-                            <?php } ?>
-
-                        </select> -->
                     </div>
                     <div class="form-group">
                         <label>Password</label>
